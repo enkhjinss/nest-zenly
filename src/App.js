@@ -1,3 +1,7 @@
+import "./styles/main.css";
+import "./styles/flex.css"
+
+import { LoginContainer } from "./components/LoginContainer";
 const axios = require("axios");
 
 const App = () => {
@@ -18,7 +22,9 @@ const App = () => {
     //         console.log(error);
     //     });
 
-    return <div>hi</div>;
+    return <>
+      <LoginContainer />
+    </>;
 };
 
 export default App;

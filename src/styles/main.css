@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(../images/Group\ 2213.png); */
+}
+
+.loginContainer {
+    height: 80%;
+    width: 30%;
+    box-shadow: 0px 4px 70px 0px #0000001A;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #FEDCC5 0%, #FEDDC6 100%);
+}
+input, button{
+    width: 90%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+input::placeholder {
+    color: #BCBEC0;
+}
+button {
+    background: #F25019;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+input {
+    margin-bottom: 50px;
+}
