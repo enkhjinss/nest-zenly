@@ -1,3 +1,8 @@
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth();
+auth.languageCode = 'it';
+
 export const SendCode = () => {
     return (
         <>
