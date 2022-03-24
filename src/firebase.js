@@ -1,15 +1,17 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC7eHvHD9OXVIEUU1K_KyavzPfhdkhZYaM",
-    authDomain: "leaply-nest.firebaseapp.com",
-    projectId: "leaply-nest",
-    storageBucket: "leaply-nest.appspot.com",
-    messagingSenderId: "294575023785",
-    appId: "1:294575023785:web:a8cda7dfa764fa86a9abb8"
+    apiKey: "AIzaSyBr_qJTe-9_TZhGM2Dhwh_NmGrKArMaR-k",
+    authDomain: "nest-zenly.firebaseapp.com",
+    projectId: "nest-zenly",
+    storageBucket: "nest-zenly.appspot.com",
+    messagingSenderId: "184906635809",
+    appId: "1:184906635809:web:2215f5f99e9206693d6160",
 };
 
 const app = initializeApp(firebaseConfig);
 
+export const db = getFirestore(app);
 export const auth = getAuth(app);

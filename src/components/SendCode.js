@@ -1,21 +1,21 @@
-import { getAuth, RecaptchaVerifier , signInWithPhoneNumber } from "firebase/auth";
-import { useEffect } from "react";
+import { useState } from "react";
 
-const RecaptchaVerifier = useRef();
-
-useEffect(() => {
-    const auth = getAuth();
-    RecaptchaVerifier.current = new RecaptchaVerifier('recaptcha-container' , {} , auth);
-}, [])
-const onClick = () => {
-    const auth = getAuth();
-    auth.languageCode = "it";
-}
 export const SendCode = ({ newPhoneNumber }) => {
+    const [phoneNumber, setPhoneNumber] = useState("");
+
+    const onClick = () => {
+        newPhoneNumber({ phoneNumber: phoneNumber });
+    };
     return (
         <>
-            <input type={"text"} placeholder="Please enter the phone number" onChange={ (e) => {setValue(e.target.value)} } />
-            <button onClick={ onClick }>Send Code</button>
+            <input
+                type={"text"}
+                placeholder="Please enter the phone number"
+                onChange={(e) => {
+                    setPhoneNumber(e.target.value);
+                }}
+            />
+            <button onClick={onClick}>Send Code</button>
         </>
     );
 };

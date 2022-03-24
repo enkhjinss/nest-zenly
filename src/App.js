@@ -1,11 +1,32 @@
 import "./styles/main.css";
-import "./styles/flex.css"
+import "./styles/flex.css";
 
 import { LoginContainer } from "./components/LoginContainer";
+import { MapContainer } from "./components/MapContainer";
+
+import { useState, useEffect } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 // const axios = require("axios");
 
-
 const App = () => {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser({
+                    uid: user.uid,
+                    phoneNumber: user.phoneNumber,
+                    email: user.email,
+                    displayName: user.displayName,
+                });
+            } else {
+                setUser(null);
+            }
+        });
+    }, []);
 
     // const config = {
     //     method: "get",
@@ -22,10 +43,7 @@ const App = () => {
     //     .catch(function (error) {
     //         console.log(error);
     //     });
-
-    return <>
-      <LoginContainer />
-    </>;
+    return <>{user ? <MapContainer /> : <LoginContainer />}</>;
 };
 
 export default App;
