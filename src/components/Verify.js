@@ -1,5 +1,8 @@
 export const Verify = () => {
     return (
-        <div>Verify</div>
+        <>
+            <input type={"text"} placeholder="Please enter the code" />
+            <button>Verify</button>
+        </>
     )
 }
